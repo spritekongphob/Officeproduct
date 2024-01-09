@@ -1,0 +1,237 @@
+Officeproduct
+ทำด้วย Bootstrap  
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        @media screen and (max-width: 800px) {
+            .tet-search{
+                width: 100% !important;
+            }
+            .table-master{
+                min-width: 1000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="w-100 p-5 shadow mb-5">
+        <div class="container d-flex justify-content-between" > 
+            <h2 class="mb-0">KP Office</h2>
+            <div>
+                <div class="btn btn-outline-primary">Sign up</div>
+                <div class="btn btn-primary">Sign in</div>
+
+            </div>
+        </div>
+    </nav>    
+        <!--หน้าเมนู-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <div class="list-group mb-3">
+                    <a href="#" class="list-group-item list-group-item-action " aria-current="true">Dashbpard</a>
+                    <a href="#" class="list-group-item list-group-item-action active">Product</a>
+                    <a href="#" class="list-group-item list-group-item-action">Bill</a>
+                    <a href="#" class="list-group-item list-group-item-action">Customer</a>
+                    <a href="#" class="list-group-item list-group-item-action">Chat</a>
+                    <a href="#" class="list-group-item list-group-item-action">Logout</a>
+                  </div>
+            </div>
+            <div class="col-12 col-sm-9">
+                <div class="d-flex justify-content-between">
+                    <h2 class="mb-0">Product</h2>
+                    <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#md-addproduct">Add Product</div>
+                </div>
+
+                <!--ปุ๋มsearh-->
+                <input type="text" class="tet-search mt-3 mb-3 w-23 from-control" placeholder="Search....">
+                
+                <!--Table -->            
+            <div class="card" style="overflow: scroll;">     <!--ฟั่งชั่น overFlow scroll คือ เลื่อนซ้ายเลื่อนขวาได้ -->
+                <table class="table-master table table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">SKU</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>                     
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </td>           <!-- ใส่รูป-->
+                        <td>Maxbook M1</td>  <!--Product-->
+                        <td>A00000515</td>   <!--Number เครื่อง-->
+                        <td>27,150 THB</td>  <!--ราคา-->
+                        <td class="text-danger">9</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-success">Active</span>
+                        </td>    <!--Show status-->
+                      </tr>
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://images.unsplash.com/photo-1581795669633-91ef7c9699a8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </td>           <!-- ใส่รูป-->
+                        <td>Iphone14 Pro</td>  <!--Product-->
+                        <td>A00000578</td>   <!--Number เครื่อง-->
+                        <td>38,456 THB</td>  <!--ราคา-->
+                        <td>21</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-danger">Inactive</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://media.istockphoto.com/id/506513748/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%81%E0%B8%A7%E0%B9%88%E0%B8%99%E0%B8%95%E0%B8%B2%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%AB%E0%B8%B9%E0%B8%9F%E0%B8%B1%E0%B8%87.jpg?s=2048x2048&w=is&k=20&c=f9wA82SxoF9iaoyzX4gSBQhU_CV7iOl2smaHlqm-XDw=">
+                        </td>           <!-- ใส่รูป-->
+                        <td>earphones</td>  <!--Product-->
+                        <td>A00000889</td>   <!--Number เครื่อง-->
+                        <td>2,544 THB</td>  <!--ราคา-->
+                        <td>101</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-success">Active</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://media.istockphoto.com/id/1370718733/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%AB%E0%B8%B9%E0%B8%9F%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2%E0%B8%AB%E0%B8%B9%E0%B8%9F%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B9%89%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%84%E0%B8%AA%E0%B9%81%E0%B8%A2%E0%B8%81%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=2048x2048&w=is&k=20&c=cxqfa83_wDYcve2DHILTL1GrwRo8ujzKWX4JlunxIeM=">
+                        </td>           <!-- ใส่รูป-->
+                        <td>Aripod</td>  <!--Product-->
+                        <td>A00004474</td>   <!--Number เครื่อง-->
+                        <td>5,451 THB</td>  <!--ราคา-->
+                        <td>45</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-success ">Active</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://images.unsplash.com/photo-1623393945964-8f5d573f9358?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </td>           <!-- ใส่รูป-->
+                        <td>Case</td>  <!--Product-->
+                        <td>A00008888</td>   <!--Number เครื่อง-->
+                        <td>4,646 THB</td>  <!--ราคา-->
+                        <td>984</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-success ">Active</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://images.unsplash.com/photo-1415604934674-561df9abf539?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </td>           <!-- ใส่รูป-->
+                        <td>Time</td>  <!--Product-->
+                        <td>A00004411</td>   <!--Number เครื่อง-->
+                        <td>52,452 THB</td>  <!--ราคา-->
+                        <td>4,557</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-secondary ">Almost</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </td>           <!-- ใส่รูป-->
+                        <td>clock</td>  <!--Product-->
+                        <td>A00005555</td>   <!--Number เครื่อง-->
+                        <td>7,450 THB</td>  <!--ราคา-->
+                        <td class="text-danger">4</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-danger ">Inactive</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://media.istockphoto.com/id/1443814393/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%B1%E0%B8%94%E0%B9%84%E0%B8%A3%E0%B9%89%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%AB%E0%B8%B9%E0%B8%9F%E0%B8%B1%E0%B8%87%E0%B8%9A%E0%B8%99%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=JdOV6NLQFwyFSpwtP2SsP839mZshE2FiwLT7dF6TbbI=">
+                        </td>           <!-- ใส่รูป-->
+                        <td>Aripot pro</td>  <!--Product-->
+                        <td>A00004777</td>   <!--Number เครื่อง-->
+                        <td>6,451 THB</td>  <!--ราคา-->
+                        <td>78</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-success ">Active</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      <tr>
+                        <td>
+                            <img class="rounded" style="width: 70px; height: 35px; object-fit: cover;"
+                                src="https://media.istockphoto.com/id/1875675263/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%A3%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%A3%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B9%81%E0%B8%A2%E0%B8%81%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=2048x2048&w=is&k=20&c=xVo2lS0pUqEsDaMrq-11CgZOAr9Re0hIfxkNrg9amnU=">
+                        </td>           <!-- ใส่รูป-->
+                        <td>camara</td>  <!--Product-->
+                        <td>A00004475</td>   <!--Number เครื่อง-->
+                        <td>50,451 THB</td>  <!--ราคา-->
+                        <td>852</td>   <!--Stock-->
+                        <td>
+                            <span class="btn-sm btn btn-success ">Active</span>
+                        </td>    <!--Show status-->
+                      </tr> 
+                      
+                    </tbody>
+                  </table>
+               </div>
+            </div>
+        </div>
+    </div>
+    <!--End product-->
+
+    <!--หน้าต่าง หรือ Modal-->
+    <div class="modal fade" id="md-addproduct" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <span>Product name</span>
+                    <input type="text" class="form-control" placeholder="Insert name">
+                </div>
+                <div class="mb-3">
+                    <span>KSU</span>
+                    <input type="text" class="form-control" placeholder="Insert ksu">
+                </div>
+                <div class="mb-3">
+                    <span>Price</span>
+                    <input type="text" class="form-control" placeholder="Insert price">
+                </div>
+                <div class="mb-3">
+                    <span>Stock</span>
+                    <input type="text" class="form-control" placeholder="Insert stock">
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End หน้าต่าง modal-->
+
+</body>
+</html>
